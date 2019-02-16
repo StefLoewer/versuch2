@@ -1,3 +1,4 @@
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -15,8 +16,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import plotly.plotly as py
 import plotly.graph_objs as go
-from plotly.graph_objs import *
+#from plotly.graph_objs import *
 
+'''
+'''
 erfolgsfaktoren=pd.read_csv('/Users/stefanieloewer/PythonTraining/MeinErsterDashCode/erfolgsfaktoren.csv')
 
 erfolgsfaktoren=erfolgsfaktoren.sort_values('Standardized Beta N1=310 Validation')
@@ -62,8 +65,8 @@ success_data = [trace1, trace2, trace3]
 
 success_layout = go.Layout(
     title = 'Success factors of software development', # Graph title
-    yaxis = dict(showticklabels=False,
-                title = 'Success factors',
+    yaxis = dict(showticklabels=True,
+                title = '',
                  titlefont = dict(
                     family='Arial, sans-serif',
                     size=12,
@@ -77,13 +80,13 @@ success_layout = go.Layout(
                     color='rgb(0, 0, 0)'
             ))
 )
-'''
+
 annotations = []
 
-y_alle = np.rint(erfolgsfaktoren['Standardized Beta N=639'])
+y_alle = np.rint(all_summe)
 
 # Adding labels
-for yd, xd in zip(erfolgsfaktoren['Success factors'], erfolgsfaktoren['Standardized Beta N=639']):
+for yd, xd in zip(successfactors, all_summe):
     annotations.append(dict(xref='paper', yref='y',
                         x=0, y=yd,
                         xanchor='right',
@@ -99,8 +102,6 @@ for yd, xd in zip(erfolgsfaktoren['Success factors'], erfolgsfaktoren['Standardi
                                   color='rgb(150,150,150)'),
                         showarrow=False))
 
-#layout['annotations'] = annotations
-'''
 success_fig = go.Figure(data=success_data, layout=success_layout)
 
 
