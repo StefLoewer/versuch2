@@ -67,7 +67,7 @@ annotations = []
 
 y_alle = np.rint(erfolgsfaktoren['Standardized Beta N=639'])
 
-#Adding labels
+# Adding labels
 for yd, xd in zip(erfolgsfaktoren['Success factors'], erfolgsfaktoren['Standardized Beta N=639']):
     annotations.append(dict(xref='paper', yref='y',
                         x=0, y=yd,
@@ -99,4 +99,5 @@ app.layout = html.Div(children=[
     )])
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
+
