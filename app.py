@@ -91,11 +91,12 @@ app = dash.Dash()
 server = app.server
 
 app.layout = html.Div(children=[
-    html.H1('SWsuccessfactor'),
+    html.H1('Flying Dog Beers'),
     dcc.Graph(
-        id='LoewerProject',
-        #figure=success_fig
-    )])
+        id='flyingdog',
+        #figure=beer_fig
+    )]
+)
 
 if __name__ == '__main__':
     app.run_server()
