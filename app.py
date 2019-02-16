@@ -78,7 +78,7 @@ app.layout = html.Div(children=[
     html.H1('SWsuccessfactor'),
     dcc.Graph(
         id='LoewerProject',
-        figure=success_fig
+        #figure=success_fig
     )])
 
 if __name__ == '__main__':
