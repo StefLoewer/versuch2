@@ -10,7 +10,7 @@ import numpy as np
 erfolgsfaktoren=pd.read_csv('/Users/stefanieloewer/PythonTraining/MeinErsterDashCode/erfolgsfaktoren.csv')
 
 erfolgsfaktoren=erfolgsfaktoren.sort_values('Standardized Beta N1=310 Validation')
-'''
+
 successfactors=['Team atmosphere',
                 'User involvement',
                 'Strength of projectleader',
@@ -69,7 +69,7 @@ success_layout = go.Layout(
 )
 
 success_fig = go.Figure(data=success_data, layout=success_layout)
-
+'''
 
 app = dash.Dash()
 server = app.server
