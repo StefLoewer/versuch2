@@ -1,15 +1,22 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import plotly.graph_objs as go
+
+'''
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import plotly.plotly as py
 import plotly.graph_objs as go
+#from plotly.graph_objs import *
 
 
-'''
+
 erfolgsfaktoren=pd.read_csv('/Users/stefanieloewer/PythonTraining/MeinErsterDashCode/erfolgsfaktoren.csv')
 
 erfolgsfaktoren=erfolgsfaktoren.sort_values('Standardized Beta N1=310 Validation')
@@ -86,7 +93,6 @@ for yd, xd in zip(erfolgsfaktoren['Success factors'], erfolgsfaktoren['Standardi
 success_fig = go.Figure(data=success_data, layout=success_layout)
 '''
 
-
 app = dash.Dash()
 server = app.server
 
@@ -99,4 +105,3 @@ app.layout = html.Div(children=[
 
 if __name__ == '__main__':
     app.run_server()
-
