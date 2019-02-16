@@ -1,4 +1,3 @@
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -6,19 +5,7 @@ import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
 
-'''
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
-import plotly.plotly as py
-import plotly.graph_objs as go
-#from plotly.graph_objs import *
 
-'''
 '''
 erfolgsfaktoren=pd.read_csv('/Users/stefanieloewer/PythonTraining/MeinErsterDashCode/erfolgsfaktoren.csv')
 
@@ -80,28 +67,7 @@ success_layout = go.Layout(
                     color='rgb(0, 0, 0)'
             ))
 )
-'''
-annotations = []
 
-y_alle = np.rint(all_summe)
-
-# Adding labels
-for yd, xd in zip(successfactors, all_summe):
-    annotations.append(dict(xref='paper', yref='y',
-                        x=0, y=yd,
-                        xanchor='right',
-                        text=str(yd),
-                        font=dict(family='Arial', size=10, color='rgb(0, 0, 0)'),
-                        showarrow=False, align='right'))
-
-    annotations.append(dict(xref='paper', yref='paper',
-                        x=-0.001, y=-0.2,
-                        text='Stefanie Loewer  ' +
-                             '"Erfolgsfaktoren softwaregestuetzter Validierungswerkzeuge"',
-                        font=dict(family='Arial', size=10,
-                                  color='rgb(150,150,150)'),
-                        showarrow=False))
-'''
 success_fig = go.Figure(data=success_data, layout=success_layout)
 
 
