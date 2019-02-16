@@ -17,7 +17,7 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 #from plotly.graph_objs import *
 
-
+'''
 
 erfolgsfaktoren=pd.read_csv('/Users/stefanieloewer/PythonTraining/MeinErsterDashCode/erfolgsfaktoren.csv')
 
@@ -93,7 +93,7 @@ for yd, xd in zip(erfolgsfaktoren['Success factors'], erfolgsfaktoren['Standardi
 #layout['annotations'] = annotations
 
 success_fig = go.Figure(data=success_data, layout=success_layout)
-'''
+
 
 app = dash.Dash()
 server = app.server
@@ -102,7 +102,7 @@ app.layout = html.Div(children=[
     html.H1('SWsuccessfactor'),
     dcc.Graph(
         id='LoewerProject',
-        #figure=success_fig
+        figure=success_fig
     )])
 
 if __name__ == '__main__':
