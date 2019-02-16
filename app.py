@@ -6,8 +6,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import plotly.graph_objs as go
-from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-init_notebook_mode(connected=True)
+#from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+#init_notebook_mode(connected=True)
 
 import plotly.plotly as py
 import plotly.graph_objs as go
