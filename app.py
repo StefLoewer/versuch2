@@ -1,3 +1,4 @@
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -68,7 +69,7 @@ success_layout = go.Layout(
                     color='rgb(0, 0, 0)'
             ))
 )
-
+'''
 annotations = []
 
 y_alle = np.rint(erfolgsfaktoren['Standardized Beta N=639'])
@@ -91,7 +92,7 @@ for yd, xd in zip(erfolgsfaktoren['Success factors'], erfolgsfaktoren['Standardi
                         showarrow=False))
 
 #layout['annotations'] = annotations
-
+'''
 success_fig = go.Figure(data=success_data, layout=success_layout)
 
 
