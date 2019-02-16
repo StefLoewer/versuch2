@@ -1,4 +1,3 @@
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -16,34 +15,43 @@ import matplotlib.pyplot as plt
 import numpy as np
 import plotly.plotly as py
 import plotly.graph_objs as go
-#from plotly.graph_objs import *
-
-'''
+from plotly.graph_objs import *
 
 erfolgsfaktoren=pd.read_csv('/Users/stefanieloewer/PythonTraining/MeinErsterDashCode/erfolgsfaktoren.csv')
 
 erfolgsfaktoren=erfolgsfaktoren.sort_values('Standardized Beta N1=310 Validation')
+'''
+successfactors=['Team atmosphere',
+                'User involvement',
+                'Strength of projectleader',
+                'Availability of team',
+                'Sales activities',
+                'Creative contribution of team',
+                'Distance of team',
+                'Milestones' ]
 
-
+complex_domains=[0.307, 0.265, 0.205, 0.182, 0.202, 0.061, 0.109, 0.1]
+other_domains=[0.362, 0.275, 0.182, 0.194, 0.148, 0.184, 0.145, 0.069]
+all_summe=[0.342, 0.265, 0.196, 0.194, 0.17, 0.118, 0.117, 0.081]
 
 trace2 = go.Bar(
-    y=erfolgsfaktoren['Success factors'],
-    x=erfolgsfaktoren['Standardized Beta N1=310 Validation'],
-    name='Validation N1=310',
+    y=successfactors,
+    x=complex_domains,
+    name='Complex domains (N1=310)',
     marker=dict(color='rgb(0, 154, 218)'),
     orientation = 'h'
 )
 trace1 = go.Bar(
-    y=erfolgsfaktoren['Success factors'],
-    x=erfolgsfaktoren['Standardized Beta N2=311 Other IT projects'],
-    name='Other IT projects N2=311',
+    y=successfactors,
+    x=other_domains,
+    name='Other domains (N2=311)',
     marker=dict(color='rgb(192,192,192)'),
     orientation = 'h'
 )
 
 trace3 = go.Scatter(
-    y=erfolgsfaktoren['Success factors'],
-    x=erfolgsfaktoren['Standardized Beta N=639'],
+    y=successfactors,
+    x=all_summe,
     mode='lines+markers',
     line=dict(color='rgb(128, 0, 128)'),
     name='Success factors over all evaluated projects',
