@@ -43,9 +43,9 @@ trace3 = go.Scatter(
     orientation = 'h'
 )
 
-data = [trace1, trace2, trace3]
+success_data = [trace1, trace2, trace3]
 
-layout = go.Layout(
+success_layout = go.Layout(
     title = 'Success factors of software development', # Graph title
     yaxis = dict(showticklabels=False,
                 title = 'Success factors',
@@ -63,30 +63,30 @@ layout = go.Layout(
             ))
 )
 
-#annotations = []
+annotations = []
 
-#y_alle = np.rint(erfolgsfaktoren['Standardized Beta N=639'])
+y_alle = np.rint(erfolgsfaktoren['Standardized Beta N=639'])
 
-# Adding labels
-#for yd, xd in zip(erfolgsfaktoren['Success factors'], erfolgsfaktoren['Standardized Beta N=639']):
-#    annotations.append(dict(xref='paper', yref='y',
-#                        x=0, y=yd,
-#                        xanchor='right',
-#                        text=str(yd),
-#                        font=dict(family='Arial', size=10, color='rgb(0, 0, 0)'),
-#                        showarrow=False, align='right'))
-#
-#    annotations.append(dict(xref='paper', yref='paper',
-#                        x=-0.001, y=-0.2,
-#                        text='Stefanie Loewer  ' +
-#                             '"Erfolgsfaktoren softwaregestuetzter Validierungswerkzeuge"',
-#                        font=dict(family='Arial', size=10,
-#                                  color='rgb(150,150,150)'),
-#                        showarrow=False))
+#Adding labels
+for yd, xd in zip(erfolgsfaktoren['Success factors'], erfolgsfaktoren['Standardized Beta N=639']):
+    annotations.append(dict(xref='paper', yref='y',
+                        x=0, y=yd,
+                        xanchor='right',
+                        text=str(yd),
+                        font=dict(family='Arial', size=10, color='rgb(0, 0, 0)'),
+                        showarrow=False, align='right'))
+
+    annotations.append(dict(xref='paper', yref='paper',
+                        x=-0.001, y=-0.2,
+                        text='Stefanie Loewer  ' +
+                             '"Erfolgsfaktoren softwaregestuetzter Validierungswerkzeuge"',
+                        font=dict(family='Arial', size=10,
+                                  color='rgb(150,150,150)'),
+                        showarrow=False))
 
 #layout['annotations'] = annotations
 
-fig = go.Figure(data=data, layout=layout)
+success_fig = go.Figure(data=success_data, layout=success_layout)
 
 app = dash.Dash()
 server = app.server
@@ -95,7 +95,7 @@ app.layout = html.Div(children=[
     html.H1('SWsuccessfactor'),
     dcc.Graph(
         id='LoewerProject',
-        figure=fig
+        figure=success_fig
     )])
 
 if __name__ == '__main__':
